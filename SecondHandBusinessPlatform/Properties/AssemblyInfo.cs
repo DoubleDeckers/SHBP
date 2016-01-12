@@ -10,7 +10,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("")]
 [assembly: AssemblyProduct("SecondHandBusinessPlatform")]
-[assembly: AssemblyCopyright("版权所有(C)  2016")]
+[assembly: AssemblyCopyright("版权所有(C)  2015")]
 [assembly: AssemblyTrademark("")]
 [assembly: AssemblyCulture("")]
 
@@ -20,7 +20,7 @@ using System.Runtime.InteropServices;
 [assembly: ComVisible(false)]
 
 // 如果此项目向 COM 公开，则下列 GUID 用于类型库的 ID
-[assembly: Guid("ae7de077-9fe9-4cc7-a331-7046783bb956")]
+[assembly: Guid("b91ecc7f-77be-4da7-9ed4-2e80c390724b")]
 
 // 程序集的版本信息由下列四个值组成:
 //

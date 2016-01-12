@@ -7,7 +7,7 @@
     <ProductVersion>
     </ProductVersion>
     <SchemaVersion>2.0</SchemaVersion>
-    <ProjectGuid>{0ABABDD0-BD76-426C-8C97-F32E6472AAA1}</ProjectGuid>
+    <ProjectGuid>{CF34FDAF-67AE-417D-9A06-83A0E5576BBF}</ProjectGuid>
     <ProjectTypeGuids>{E3E379DF-F4C6-4180-9B81-6769533ABE47};{349c5851-65df-11da-9384-00065b846f21};{fae04ec0-301f-11d3-bf4b-00c04f79efbc}</ProjectTypeGuids>
     <OutputType>Library</OutputType>
     <AppDesignerFolder>Properties</AppDesignerFolder>
@@ -161,16 +161,25 @@
     <Compile Include="App_Start\FilterConfig.cs" />
     <Compile Include="App_Start\RouteConfig.cs" />
     <Compile Include="App_Start\WebApiConfig.cs" />
-    <Compile Include="Controllers\AccountController.cs" />
+    <Compile Include="Controllers\DemandController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
+    <Compile Include="Controllers\MerchandiseController.cs" />
+    <Compile Include="Controllers\UserController.cs" />
     <Compile Include="Filters\InitializeSimpleMembershipAttribute.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
-    <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\SecondHandBusinessPlatformDbContext.cs" />
+    <Compile Include="Models\UserModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="App_Data\SHBP.mdf" />
+    <Content Include="App_Data\SHBP_log.ldf">
+      <DependentUpon>SHBP.mdf</DependentUpon>
+    </Content>
+    <Content Include="Content\themes\adminlte\AdminLTE.css" />
+    <Content Include="Content\themes\adminlte\AdminLTE.min.css" />
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -225,8 +234,43 @@
     <Content Include="Content\themes\base\minified\jquery.ui.slider.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.tabs.min.css" />
     <Content Include="Content\themes\base\minified\jquery.ui.theme.min.css" />
+    <Content Include="Content\themes\bootstrap\bootstrap.css" />
+    <Content Include="Content\themes\bootstrap\bootstrap.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-black-light.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-black-light.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-black.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-black.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-blue-light.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-blue-light.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-blue.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-blue.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-green-light.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-green-light.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-green.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-green.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-purple-light.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-purple-light.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-purple.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-purple.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-red-light.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-red-light.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-red.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-red.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-yellow-light.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-yellow-light.min.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-yellow.css" />
+    <Content Include="Content\themes\adminlte\skins\skin-yellow.min.css" />
+    <Content Include="Content\themes\adminlte\skins\_all-skins.css" />
+    <Content Include="Content\themes\adminlte\skins\_all-skins.min.css" />
+    <Content Include="Content\themes\font-awesome\font-awesome.css" />
+    <Content Include="Content\themes\font-awesome\font-awesome.min.css" />
     <Content Include="favicon.ico" />
     <Content Include="Global.asax" />
+    <Content Include="Scripts\application\user.js" />
+    <Content Include="Scripts\bootstrap.js" />
+    <Content Include="Scripts\bootstrap.min.js" />
+    <Content Include="Scripts\jquery-1.11.3.js" />
+    <Content Include="Scripts\jquery-1.11.3.min.js" />
     <Content Include="Scripts\jquery-1.7.1-vsdoc.js" />
     <Content Include="Scripts\jquery-1.7.1.js" />
     <Content Include="Scripts\jquery-1.7.1.min.js" />
@@ -242,7 +286,9 @@
     <Content Include="Scripts\knockout-2.1.0.debug.js" />
     <Content Include="Scripts\knockout-2.1.0.js" />
     <Content Include="Scripts\modernizr-2.5.3.js" />
-    <Content Include="Web.config" />
+    <Content Include="Web.config">
+      <SubType>Designer</SubType>
+    </Content>
     <Content Include="Web.Debug.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
@@ -282,11 +328,47 @@
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="App_Data\" />
-  </ItemGroup>
+  <ItemGroup />
   <ItemGroup>
     <Content Include="packages.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Shared\_TopNavBar.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Login.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Register.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Demand.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Merchandise.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Transaction.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\User\Edit.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Merchandise\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Views\Demand\Index.cshtml" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Content\themes\font-awesome\fonts\fontawesome-webfont.eot" />
+    <None Include="Content\themes\font-awesome\fonts\fontawesome-webfont.svg" />
+    <None Include="Content\themes\font-awesome\fonts\fontawesome-webfont.ttf" />
+    <None Include="Content\themes\font-awesome\fonts\fontawesome-webfont.woff" />
+    <None Include="Content\themes\font-awesome\fonts\FontAwesome.otf" />
+    <Content Include="Views\User\Details.cshtml" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
@@ -304,7 +386,7 @@
         <WebProjectProperties>
           <UseIIS>False</UseIIS>
           <AutoAssignPort>True</AutoAssignPort>
-          <DevelopmentServerPort>1430</DevelopmentServerPort>
+          <DevelopmentServerPort>2954</DevelopmentServerPort>
           <DevelopmentServerVPath>/</DevelopmentServerVPath>
           <IISUrl>
           </IISUrl>

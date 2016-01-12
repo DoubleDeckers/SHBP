@@ -25,11 +25,11 @@ namespace SecondHandBusinessPlatform.Filters
         {
             public SimpleMembershipInitializer()
             {
-                Database.SetInitializer<UsersContext>(null);
+                Database.SetInitializer<SecondHandBusinessPlatformDbContext>(null);
 
                 try
                 {
-                    using (var context = new UsersContext())
+                    using (var context = new SecondHandBusinessPlatformDbContext())
                     {
                         if (!context.Database.Exists())
                         {

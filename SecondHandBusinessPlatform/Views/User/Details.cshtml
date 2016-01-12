@@ -1,0 +1,63 @@
+﻿@model SecondHandBusinessPlatform.Models.User
+@{
+    ViewBag.Title = "个人信息";
+}
+<div class="row">
+    <div class="col-md-2">
+    </div>
+    <div class="col-md-8">
+        <div class="box box-widget widget-user">
+            <!-- Add the bg color to the header using any of the bg-* classes -->
+            @if (Model.Status == SecondHandBusinessPlatform.Models.User.UserStatus.Normal)
+            {
+                <div class="widget-user-header bg-light-blue-active">
+                    <h3 class="widget-user-username">
+                        @Model.UserName</h3>
+                    <h5 class="widget-user-desc">
+                        学号:
+                        @if (Model.StudentId != null && Model.StudentId != "")
+                        { 
+                            <span>@Model.StudentId</span> 
+                        }
+                        else
+                        { 
+                            <span>暂无</span> 
+                        }
+                    </h5>
+                </div>
+            }
+            else
+            {
+                <div class="widget-user-header bg-red-active">
+                    <h3 class="widget-user-username">
+                        @Model.UserName</h3>
+                    <h5 class="widget-user-desc">
+                        学号:
+                        @if (Model.StudentId != null && Model.StudentId != "")
+                        { 
+                            <span>@Model.StudentId</span> 
+                        }
+                        else
+                        { 
+                            <span>暂无</span> 
+                        }
+                    </h5>
+                </div>
+            }
+            <div class="box-body box-profile">
+                <ul class="list-group list-group-unbordered">
+                    <li class="list-group-item"><b>手机号</b><a class="pull-right">@Model.Tel</a> </li>
+                    <li class="list-group-item"><b>邮箱</b> <a class="pull-right">@Model.Email</a> </li>
+                    <li class="list-group-item"><b>QQ号</b> <a class="pull-right">@Model.QQ</a> </li>
+                    <li class="list-group-item"><b>性别</b> <a class="pull-right">@Model.Gender</a> </li>
+                    <li class="list-group-item"><b>年龄</b> <a class="pull-right">@Model.Age</a> </li>
+                    <li class="list-group-item"><b>信用点数</b> <a class="pull-right">@Model.Credit</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="/user/edit">
+                <button class="btn btn-primary btn-block">
+                    <b>修改</b></button></a>
+        </div>
+</div>
+</div> </div>

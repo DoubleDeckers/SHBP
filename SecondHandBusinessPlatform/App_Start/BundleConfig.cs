@@ -9,7 +9,7 @@ namespace SecondHandBusinessPlatform
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery-1.11.3.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
                         "~/Scripts/jquery-ui-{version}.js"));
@@ -18,10 +18,15 @@ namespace SecondHandBusinessPlatform
                         "~/Scripts/jquery.unobtrusive*",
                         "~/Scripts/jquery.validate*"));
 
+            bundles.Add(new ScriptBundle("~/bundles/bootstrap").Include("~/Scripts/bootstrap.js"));
+
             // 使用 Modernizr 的开发版本进行开发和了解信息。然后，当你做好
             // 生产准备时，请使用 http://modernizr.com 上的生成工具来仅选择所需的测试。
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
                         "~/Scripts/modernizr-*"));
+
+            bundles.Add(new ScriptBundle("~/bundles/application").Include(
+                        "~/Scripts/application/user.js"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.css"));
 
@@ -38,6 +43,15 @@ namespace SecondHandBusinessPlatform
                         "~/Content/themes/base/jquery.ui.datepicker.css",
                         "~/Content/themes/base/jquery.ui.progressbar.css",
                         "~/Content/themes/base/jquery.ui.theme.css"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/bootstrap").Include("~/Content/themes/bootstrap/bootstrap.css"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/font-awesome").Include("~/Content/themes/font-awesome/font-awesome.css"));
+
+            bundles.Add(new StyleBundle("~/Content/themes/adminlte").Include(
+                "~/Content/themes/adminlte/AdminLTE.css",
+                "~/Content/themes/adminlte/skins/_all-skins.css"
+                ));
         }
     }
 }

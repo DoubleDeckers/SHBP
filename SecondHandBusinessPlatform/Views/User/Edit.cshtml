@@ -1,0 +1,82 @@
+﻿@model SecondHandBusinessPlatform.Models.User
+@{
+    ViewBag.Title = "修改信息";
+}
+<div class="row">
+    <div class="col-md-1">
+    </div>
+    <div class="col-md-10">
+        <div class="box margin with-border">
+            <div class="login-box-body">
+                <p class="login-box-msg">
+                    修改信息</p>
+                @using (Html.BeginForm("Edit", "User", FormMethod.Post, new { @id = "edit_form" }))
+                {
+                    @Html.ValidationSummary(true)
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    用户名</label>
+                                @Html.TextBoxFor(model => model.UserName, new { @class = "form-control", @placeholder = "请输入您的用户名" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    密码</label>
+                                @Html.PasswordFor(model => model.Password, new { @class = "form-control", @placeholder = "请输入您的登录密码" })
+                                @Html.ValidationMessageFor(model => model.Password)
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    手机号</label>
+                                @Html.TextBoxFor(model => model.Tel, new { @class = "form-control", @placeholder = "请输入您的手机号" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    邮箱</label>
+                                @Html.TextBoxFor(model => model.Email, new { @class = "form-control", @placeholder = "请输入您的邮箱", @type = "email" })
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label>
+                                    学号</label>
+                                @Html.TextBoxFor(model => model.StudentId, new { @class = "form-control", @placeholder = "请输入您的学号" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    性别</label>
+                                <select class="form-control" id="Gender" name="Gender">
+                                    <option value="男">男</option>
+                                    <option value="女">女</option>
+                                </select>
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    年龄</label>
+                                @Html.TextBoxFor(model => model.Age, new { @class = "form-control", @placeholder = "请输入您的年龄", @type = "number" })
+                            </div>
+                            <div class="form-group">
+                                <label>
+                                    QQ</label>
+                                @Html.TextBoxFor(model => model.QQ, new { @class = "form-control", @placeholder = "请输入您的QQ号" })
+                            </div>
+                        </div>
+                    </div>
+                    <div class="row">
+                        <div class="col-md-4">
+                        </div>
+                        <div class="col-md-4">
+                            <button type="submit" class="btn btn-primary btn-block btn-flat">
+                                提交</button>
+                            <a href="/user/details">
+                                <button type="button" class="btn btn-primary btn-block btn-flat">
+                                    返回</button>
+                            </a>
+                        </div>
+                    </div>
+                }
+            </div>
+        </div>
+    </div>
+</div>
