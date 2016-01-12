@@ -1,0 +1,26 @@
+﻿
+Microsoft Visual Studio Solution File, Format Version 11.00
+# Visual Studio 2010
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondHandBusinessPlatform", "SecondHandBusinessPlatform\SecondHandBusinessPlatform.csproj", "{0ABABDD0-BD76-426C-8C97-F32E6472AAA1}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "SecondHandBusinessPlatform.Tests", "SecondHandBusinessPlatform.Tests\SecondHandBusinessPlatform.Tests.csproj", "{3E589853-3FEE-47D8-9505-C99E0A583C13}"
+EndProject
+Global
+	GlobalSection(SolutionConfigurationPlatforms) = preSolution
+		Debug|Any CPU = Debug|Any CPU
+		Release|Any CPU = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(ProjectConfigurationPlatforms) = postSolution
+		{0ABABDD0-BD76-426C-8C97-F32E6472AAA1}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{0ABABDD0-BD76-426C-8C97-F32E6472AAA1}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{0ABABDD0-BD76-426C-8C97-F32E6472AAA1}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{0ABABDD0-BD76-426C-8C97-F32E6472AAA1}.Release|Any CPU.Build.0 = Release|Any CPU
+		{3E589853-3FEE-47D8-9505-C99E0A583C13}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{3E589853-3FEE-47D8-9505-C99E0A583C13}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{3E589853-3FEE-47D8-9505-C99E0A583C13}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{3E589853-3FEE-47D8-9505-C99E0A583C13}.Release|Any CPU.Build.0 = Release|Any CPU
+	EndGlobalSection
+	GlobalSection(SolutionProperties) = preSolution
+		HideSolutionNode = FALSE
+	EndGlobalSection
+EndGlobal
